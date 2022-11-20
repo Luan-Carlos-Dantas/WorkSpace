@@ -3,6 +3,7 @@ var hamburgers = document.querySelectorAll(".hamburger");
 let body = document.querySelector('body')
 let hamburger = document.querySelector(".hamburger");
 let nav = document.querySelector("#navigation")
+let btnBackToTop = document.querySelector('.backToTop')
 if (hamburgers.length > 0) {
   forEach(hamburgers, function(hamburger) {
     hamburger.addEventListener("click", function() {
@@ -21,6 +22,12 @@ function screenScroll(){
         nav.classList.add('scroll')
     }else{
         nav.classList.remove('scroll')
+    }
+
+    if(scrollY > 20){
+      btnBackToTop.classList.add('show')
+    }else{
+      btnBackToTop.classList.remove('show')
     }
 }
 
